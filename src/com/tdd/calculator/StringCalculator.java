@@ -1,5 +1,6 @@
 package com.tdd.calculator;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class StringCalculator {
@@ -10,7 +11,7 @@ public class StringCalculator {
         if(numbers.length() == 1){
             return Integer.parseInt(numbers);
         }
-
-        return 0;
+        List<String> numberList = Arrays.asList(numbers.split(","));
+        return Integer.parseInt(numberList.get(0))+ Integer.parseInt(numberList.get(1));
     }
 }
