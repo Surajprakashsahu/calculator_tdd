@@ -10,5 +10,6 @@ public class StringCalculatorTest {
     public void testAdd() {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals(0, stringCalculator.Add(""));
+        assertEquals(1,stringCalculator.Add("1"));
     }
 }
