@@ -12,6 +12,10 @@ public class StringCalculator {
             return Integer.parseInt(numbers);
         }
         List<String> numberList = Arrays.asList(numbers.split(","));
-        return Integer.parseInt(numberList.get(0))+ Integer.parseInt(numberList.get(1));
+        int sum = 0;
+        for(String num: numberList){
+            sum += Integer.parseInt(num);
+        }
+        return sum;
     }
 }
