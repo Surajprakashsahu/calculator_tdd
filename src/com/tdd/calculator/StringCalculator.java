@@ -6,15 +6,25 @@ import java.util.List;
 public class StringCalculator {
 
     public int Add(String numbers) throws Exception {
-        if(numbers.contains(",\n") || numbers.contains("\n,")){
-            throw new Exception("Invalid Input.");
-        }
+        String delimiters = ",|\n";
+
+
         if(numbers.equals(""))
             return 0;
         if(numbers.length() == 1){
-            return Integer.parseInt(numbers);
+            return parseToInt(numbers);
         }
-        List<String> numberList = Arrays.asList(numbers.split(",|\n"));
+        String b = numbers.substring(0,2);
+        if(numbers.substring(0,2).equals("//")){
+            delimiters += "|"+numbers.substring(2,3);
+            numbers = numbers.substring(4, numbers.length());
+        }
+
+        if(numbers.contains(",\n") || numbers.contains("\n,")){
+            throw new Exception("Invalid Input.");
+        }
+
+        List<String> numberList = Arrays.asList(numbers.split(delimiters));
         int sum = 0;
         for(String num: numberList){
             sum += parseToInt(num);
