@@ -21,7 +21,8 @@ public class StringCalculatorTest {
         assertEquals(6, stringCalculator.Add("1\n2,3"));
         assertEquals(20, stringCalculator.Add("1\n2,3,4\n10"));
         assertEquals(3, stringCalculator.Add("//;\n1;2"));
-
+        assertEquals(3, stringCalculator.Add("//;\n1; 2"));
+        assertEquals(10, stringCalculator.Add("1, 2, 3,4 "));
     }
 
     @Test()

@@ -52,7 +52,7 @@ public class StringCalculator {
 
     public int parseToInt(String numStr)throws RuntimeException{
         try{
-            return Integer.parseInt(numStr);
+            return Integer.parseInt(numStr.trim());
         }catch (Exception e){
             throw new RuntimeException(INVALID_INP);
         }
